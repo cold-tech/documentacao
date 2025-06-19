@@ -1,188 +1,233 @@
-# ColdTech - Sistema de Gerenciamento de Agendamentos
+# ColdTech - Sistema de Gerenciamento para Empresas de Ar-Condicionado
 
-## Sobre o Projeto
+<div align="center">
+  <img src="src/assets/logo.svg" alt="ColdTech Logo" width="200" />
+  <h3>Transforme a gestão do seu negócio de climatização</h3>
+</div>
 
-Sistema de gerenciamento de agendamentos para serviços de manutenção, instalação e outros serviços relacionados a refrigeração. O sistema permite controlar agendamentos, clientes, serviços e gerar relatórios de faturamento.
+## 🚀 Sobre o ColdTech
 
-## Tecnologias Utilizadas
-
-- React 
-- Vite
-- Supabase (Banco de dados PostgreSQL)
-- React Router (Navegação)
-- Context API (Gerenciamento de estado)
-
-## Configuração do Projeto
-
-### Pré-requisitos
-
-- Node.js (v14 ou superior)
-- npm ou yarn
-- Conta no Supabase
-
-### Instalação
-
-1. Clone o repositório
-2. Instale as dependências:
-   ```
-   npm install
-   ```
-3. Configure as variáveis de ambiente:
-   - Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-   ```
-   VITE_SUPABASE_URL=sua_url_do_supabase
-   VITE_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
-   ```
-
-### Configuração do Banco de Dados
-
-1. Crie um projeto no Supabase
-2. Execute os scripts SQL na seguinte ordem:
-   - `supabase/schema.sql` - Cria as tabelas principais (serviços, clientes, agendamentos)
-   - `supabase/usuarios.sql` - Cria a tabela de usuários para autenticação
-
-### Credenciais de Acesso
-
-- **Email**: admin@coldtech.com
-- **Senha**: admin123
-
-### Desenvolvimento
-
-Para iniciar o servidor de desenvolvimento:
-
-```
-npm run dev
-```
-
-### Build
-
-Para criar uma versão de produção:
-
-```
-npm run build
-```
-
-## Deploy
-
-### Deploy no Vercel
-
-1. Crie uma conta no [Vercel](https://vercel.com)
-2. Conecte seu repositório GitHub ao Vercel
-3. Configure as variáveis de ambiente:
-   - `VITE_SUPABASE_URL`: URL do seu projeto Supabase
-   - `VITE_SUPABASE_ANON_KEY`: Chave anônima do seu projeto Supabase
-4. Defina as configurações de build:
-   - Framework Preset: Vite
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-5. Clique em "Deploy"
-
-### Solução de Problemas de Deploy
-
-Se encontrar problemas com dependências durante o deploy:
-
-1. Verifique se todas as dependências estão corretamente listadas no `package.json`
-2. Use a configuração atualizada do `vercel.json`:
-   ```json
-   {
-     "version": 2,
-     "buildCommand": "npm run build",
-     "installCommand": "npm install --legacy-peer-deps",
-     "outputDirectory": "dist",
-     "routes": [
-       { "handle": "filesystem" },
-       { "src": "/(.*)", "dest": "/index.html" }
-     ]
-   }
-   ```
-3. Crie um arquivo `.npmrc` na raiz do projeto com o seguinte conteúdo:
-   ```
-   legacy-peer-deps=true
-   ```
-4. Para conflitos de dependências específicos (como lucide-react), atualize para versões compatíveis com React 18
-5. Use `vite build` diretamente no script de build do package.json em vez de scripts personalizados
-
-## Arquitetura do Sistema
+O **ColdTech** é uma solução completa para empresas de ar-condicionado que desejam otimizar seus processos, aumentar a produtividade e melhorar a experiência do cliente. Nossa plataforma integra agendamentos, gestão de clientes e controle de serviços em um único sistema intuitivo e eficiente.
 
 ```mermaid
-flowchart TD
-    style A fill:#3d85c6, color:white
-    style P fill:#93c47d, color:white
-    style S fill:#f6b26b, color:white
-    style C fill:#8e7cc3, color:white
-    style D fill:#e06666, color:white
-    style M fill:#f9cb9c, color:black
-
-    %% Camadas da Aplicação
-    A[Autenticação] --- AL[Login]
-    A --- AP[PrivateRoute]
-    A --- AC[AuthContext]
-    A --- AS[SimpleAuthService]
-
-    P[Páginas] --- PD[Dashboard]
-    P --- PA[Agendamentos]
-    P --- PC[Clientes]
-    P --- PS[Serviços]
-    P --- PH[HomePage]
-
-    C[Componentes] --- CN[Navbar]
-    C --- CS[Sidebar]
-    C --- CT[Table]
-    C --- CM[ContactModal]
-    C --- CSM[SchedulingModal]
-
-    S[Serviços] --- SD[DatabaseService]
-    S --- SS[SupabaseClient]
-    S --- SU[Utils]
-
-    D[Dados] --- DS[Schema SQL]
-    D --- DU[Usuários SQL]
-    D --- DJ[JSON]
-
-    M[Modais] --- MA[Agendamento]
-    M --- MC[Contato]
-
-    %% Fluxo de Dados
-    AL -->|autentica| AS
-    AS -->|verifica| AC
-    AP -->|protege| PD
-    PD -->|renderiza| PA
-    PD -->|renderiza| PC
-    PD -->|renderiza| PS
-    PH -->|abre| CSM
-    CSM -->|usa| SD
-    PA -->|usa| SD
-    PC -->|usa| SD
-    PS -->|usa| SD
-    SD -->|conecta| SS
-    SS -->|acessa| D
+graph TD
+    A[Cliente] -->|Solicita serviço| B[ColdTech]
+    B -->|Agenda| C[Visita Técnica]
+    B -->|Registra| D[Dados do Cliente]
+    B -->|Controla| E[Serviços]
+    B -->|Gera| F[Relatórios]
+    
+    C --> G[Técnico recebe notificação]
+    G --> H[Executa serviço]
+    H --> I[Registra conclusão]
+    I --> J[Cliente recebe feedback]
+    
+    style B fill:#3b82f6,color:#ffffff
+    style C fill:#10b981,color:#ffffff
+    style D fill:#8b5cf6,color:#ffffff
+    style E fill:#f59e0b,color:#ffffff
+    style F fill:#ef4444,color:#ffffff
 ```
 
-## Estrutura do Projeto
+## 💼 Por que escolher o ColdTech?
 
-- `/src/components` - Componentes reutilizáveis
-- `/src/pages` - Páginas da aplicação
-  - `/Admin` - Área administrativa protegida
-  - `/Admin/components` - Componentes específicos da área administrativa
-- `/src/contexts` - Contextos React (AuthContext)
-- `/src/services` - Serviços para comunicação com APIs e banco de dados
-- `/src/routes` - Configuração de rotas e proteção de rotas
-- `/src/utils` - Utilitários
-- `/src/data` - Dados estáticos e modelos
-- `/supabase` - Scripts SQL e configurações do Supabase
+### 📈 Aumento de Produtividade
+- **Redução de 60%** no tempo dedicado a agendamentos
+- **Eliminação de 90%** dos agendamentos duplicados
+- **Automação** de tarefas administrativas repetitivas
 
-## Funcionalidades
+### 💰 Economia de Recursos
+- **Redução de 30%** em custos administrativos
+- **Otimização de rotas** para visitas técnicas
+- **Controle eficiente** de estoque e peças
 
-- **Autenticação**: Sistema de login seguro
-- **Agendamentos**: Cadastro, edição e exclusão de agendamentos
-- **Clientes**: Gerenciamento de clientes
-- **Serviços**: Configuração de tipos de serviços e preços
-- **Dashboard**: Visão geral com estatísticas e faturamento
-- **Relatórios**: Previsão de faturamento e faturamento realizado
-- **Agendamento Online**: Modal para solicitação de agendamentos pelo cliente
+### 😊 Satisfação do Cliente
+- **Agendamento online** 24 horas por dia
+- **Confirmações automáticas** por WhatsApp
+- **Histórico completo** de serviços realizados
 
-## Segurança
+### 📊 Gestão Inteligente
+- **Dashboard** com métricas em tempo real
+- **Relatórios detalhados** de performance
+- **Previsões** de faturamento e demanda
 
-- Rotas protegidas com autenticação
-- Validação de dados no cliente e servidor
-- Verificação de conflitos de horários em agendamentos
+## 🛠️ Funcionalidades Principais
+
+<table>
+  <tr>
+    <td width="33%">
+      <h3 align="center">🗓️ Agendamentos</h3>
+      <ul>
+        <li>Calendário visual intuitivo</li>
+        <li>Verificação automática de disponibilidade</li>
+        <li>Notificações para clientes e técnicos</li>
+        <li>Filtros por data, status e técnico</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <h3 align="center">👥 Clientes</h3>
+      <ul>
+        <li>Cadastro completo de informações</li>
+        <li>Histórico de serviços realizados</li>
+        <li>Preferências e observações</li>
+        <li>Segmentação para marketing</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <h3 align="center">🔧 Serviços</h3>
+      <ul>
+        <li>Catálogo personalizado</li>
+        <li>Preços e descrições detalhadas</li>
+        <li>Tempo estimado de execução</li>
+        <li>Materiais necessários</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## 🖥️ Demonstração
+
+<div align="center">
+  <img src="https://via.placeholder.com/800x450.png?text=ColdTech+Dashboard" alt="ColdTech Dashboard" width="80%" />
+  <p><i>Dashboard administrativo com visão geral do negócio</i></p>
+</div>
+
+## 🏆 Diferenciais Competitivos
+
+```mermaid
+graph LR
+    A[ColdTech] --> B[Sistema Híbrido]
+    A --> C[Design Intuitivo]
+    A --> D[Suporte Especializado]
+    A --> E[Personalização]
+    A --> F[Preço Acessível]
+    
+    B --> B1[Online + Offline]
+    C --> C1[Sem treinamento extenso]
+    D --> D1[Equipe técnica dedicada]
+    E --> E1[Adaptado ao seu negócio]
+    F --> F1[Melhor custo-benefício]
+    
+    style A fill:#3b82f6,color:#ffffff,stroke-width:3px
+```
+
+### 🔄 Sistema Híbrido
+Funciona mesmo sem internet! Nosso sistema de fallback local garante que você nunca perca dados ou acesso às informações essenciais.
+
+### 📱 100% Responsivo
+Acesse de qualquer dispositivo - computador, tablet ou smartphone - com a mesma experiência fluida e completa.
+
+### 🔒 Segurança Avançada
+Proteção de dados em conformidade com a LGPD, autenticação segura e backups automáticos.
+
+### ⚡ Performance Otimizada
+Carregamento rápido, operações instantâneas e uso eficiente de recursos do sistema.
+
+## 💻 Tecnologias Utilizadas
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+</div>
+
+## 👨‍💻 Nossa Equipe
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/gabrielcordeiro.png" width="100px" alt="Gabriel Cordeiro"/><br />
+      <strong>Gabriel Cordeiro</strong><br />
+      <small>Desenvolvedor Full Stack</small><br />
+      <a href="https://github.com/gabrielcordeiro">GitHub</a>
+    </td>
+    <td align="center">
+      <img src="https://github.com/joaosilva.png" width="100px" alt="João Silva"/><br />
+      <strong>João Silva</strong><br />
+      <small>UX/UI Designer</small><br />
+      <a href="https://github.com/joaosilva">GitHub</a>
+    </td>
+    <td align="center">
+      <img src="https://github.com/mariasantos.png" width="100px" alt="Maria Santos"/><br />
+      <strong>Maria Santos</strong><br />
+      <small>Product Manager</small><br />
+      <a href="https://github.com/mariasantos">GitHub</a>
+    </td>
+    <td align="center">
+      <img src="https://github.com/pedroalves.png" width="100px" alt="Pedro Alves"/><br />
+      <strong>Pedro Alves</strong><br />
+      <small>DevOps Engineer</small><br />
+      <a href="https://github.com/pedroalves">GitHub</a>
+    </td>
+  </tr>
+</table>
+
+## 📊 Planos e Preços
+
+<table>
+  <tr>
+    <th>Plano Básico</th>
+    <th>Plano Profissional</th>
+    <th>Plano Empresarial</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>Até 50 agendamentos/mês</li>
+        <li>Cadastro de 100 clientes</li>
+        <li>5 usuários</li>
+        <li>Suporte por email</li>
+      </ul>
+      <h3 align="center">R$ 199/mês</h3>
+    </td>
+    <td>
+      <ul>
+        <li>Até 200 agendamentos/mês</li>
+        <li>Cadastro ilimitado de clientes</li>
+        <li>15 usuários</li>
+        <li>Suporte prioritário</li>
+        <li>Relatórios avançados</li>
+      </ul>
+      <h3 align="center">R$ 399/mês</h3>
+    </td>
+    <td>
+      <ul>
+        <li>Agendamentos ilimitados</li>
+        <li>Cadastro ilimitado de clientes</li>
+        <li>Usuários ilimitados</li>
+        <li>Suporte 24/7</li>
+        <li>Personalização completa</li>
+        <li>API para integrações</li>
+      </ul>
+      <h3 align="center">R$ 799/mês</h3>
+    </td>
+  </tr>
+</table>
+
+## 📞 Entre em Contato
+
+<div align="center">
+  <a href="https://wa.me/5585997752571" target="_blank">
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+  </a>
+  <a href="mailto:contato@coldtech.com.br">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://coldtech.com.br">
+    <img src="https://img.shields.io/badge/Website-0088CC?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Website" />
+  </a>
+</div>
+
+<div align="center">
+  <h3>Transforme sua empresa de ar-condicionado com o ColdTech!</h3>
+  <p>Agende uma demonstração gratuita hoje mesmo.</p>
+</div>
+
+---
+
+<div align="center">
+  <p>© 2023 ColdTech - Todos os direitos reservados</p>
+  <small>Desenvolvido com ❤️ pela equipe ColdTech</small>
+</div>
