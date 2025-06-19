@@ -52,6 +52,36 @@ graph TD
     
     R --> V[Modal System]
     V --> W[SchedulingModal]
+
+    %% Estilo visual moderno e técnico
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:1.5px,color:#f8fafc
+    style B fill:#0f172a,stroke:#0ea5e9,stroke-width:1.5px,color:#f8fafc
+    style C fill:#1e40af,stroke:#3b82f6,stroke-width:1.5px,color:#f8fafc
+    style D fill:#10b981,stroke:#fff,color:#fff
+    style E fill:#10b981,stroke:#fff,color:#fff
+    style F fill:#f59e0b,stroke:#fff,color:#fff
+    style G fill:#ef4444,stroke:#fff,color:#fff
+
+    style H fill:#334155,stroke:#7dd3fc,color:#f1f5f9
+    style I fill:#475569,stroke:#38bdf8,color:#e2e8f0
+    style J fill:#0ea5e9,color:#fff
+    style K fill:#f87171,color:#fff
+
+    style L fill:#1e293b,stroke:#7c3aed,color:#fff
+    style M fill:#6d28d9,color:#fff
+    style N fill:#6d28d9,color:#fff
+    style O fill:#6d28d9,color:#fff
+    style P fill:#6d28d9,color:#fff
+    style Q fill:#6d28d9,color:#fff
+
+    style R fill:#1e293b,stroke:#22d3ee,color:#e2e8f0
+    style S fill:#334155,stroke:#0ea5e9,color:#f8fafc
+    style T fill:#10b981,color:#fff
+    style U fill:#64748b,color:#fff
+
+    style V fill:#3b0764,color:#fff
+    style W fill:#7e22ce,color:#fff
+
 ```
 
 > **Explicação do diagrama:** Este diagrama mostra como o sistema de rotas está organizado. O `BrowserRouter` é o componente principal que gerencia todas as rotas. Quando um usuário tenta acessar uma rota privada (`/admin`), o sistema verifica se ele está autenticado. Se estiver, mostra o conteúdo; se não, redireciona para a página de login. Além disso, alguns componentes como o botão de WhatsApp só aparecem em rotas públicas.
