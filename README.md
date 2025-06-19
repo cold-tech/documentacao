@@ -138,28 +138,28 @@ Carregamento rápido, operações instantâneas e uso eficiente de recursos do s
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/gabrielcordeiro.png" width="100px" alt="Gabriel Cordeiro"/><br />
+      <img src="https://avatars.githubusercontent.com/u/98492418?v=4" width="100px" alt="Gabriel Cordeiro"/><br />
       <strong>Gabriel Cordeiro</strong><br />
       <small>Desenvolvedor Full Stack</small><br />
-      <a href="https://github.com/gabrielcordeiro">GitHub</a>
+      <a href="https://github.com/GabrielCordeiroBarrosoTeles">GitHub</a>
     </td>
     <td align="center">
-      <img src="https://github.com/joaosilva.png" width="100px" alt="João Silva"/><br />
-      <strong>João Silva</strong><br />
+      <img src="https://avatars.githubusercontent.com/u/181667070?v=4" width="100px" alt="Wilton"/><br />
+      <strong>Wilton</strong><br />
       <small>UX/UI Designer</small><br />
-      <a href="https://github.com/joaosilva">GitHub</a>
+      <a href="https://github.com/wiltondesigner">GitHub</a>
     </td>
     <td align="center">
-      <img src="https://github.com/mariasantos.png" width="100px" alt="Maria Santos"/><br />
-      <strong>Maria Santos</strong><br />
-      <small>Product Manager</small><br />
-      <a href="https://github.com/mariasantos">GitHub</a>
+      <img src="https://avatars.githubusercontent.com/u/115358648?v=4" width="100px" alt="João Paulo"/><br />
+      <strong>João Paulo</strong><br />
+      <small>Desenvolvedor Full Stack</small><br />
+      <a href="https://github.com/joao-paulo-paiva">GitHub</a>
     </td>
     <td align="center">
-      <img src="https://github.com/pedroalves.png" width="100px" alt="Pedro Alves"/><br />
-      <strong>Pedro Alves</strong><br />
-      <small>DevOps Engineer</small><br />
-      <a href="https://github.com/pedroalves">GitHub</a>
+      <img src="https://avatars.githubusercontent.com/u/206216157?v=4" width="100px" alt="Fablilson Oliver"/><br />
+      <strong>Fablilson Oliver</strong><br />
+      <small>Mobile Developer</small><br />
+      <a href="https://github.com/Fablilsonoliver">GitHub</a>
     </td>
   </tr>
 </table>
