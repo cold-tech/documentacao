@@ -18,17 +18,28 @@ flowchart TD
     E -->|Armazena| G[LocalStorage]
     E -->|Redireciona| H[Painel Admin]
     F -->|Retorna para| B
-    
+
     I[Acesso a rota protegida] -->|Verifica| J[PrivateRoute]
     J -->|Consulta| G
     J -->|Decisão| K{Autenticado?}
     K -->|Sim| L[Permite acesso]
     K -->|Não| M[Redireciona para login]
-    
-    style D fill:#f9d9eb
-    style K fill:#f9d9eb
-    style E fill:#d9f9eb
-    style L fill:#d9f9eb
+
+    %% Cores modernas e contrastantes
+    style A fill:#3b82f6,stroke:#1e3a8a,stroke-width:1.5px,color:#ffffff
+    style B fill:#2563eb,stroke:#1e40af,stroke-width:1.5px,color:#ffffff
+    style C fill:#0ea5e9,stroke:#0369a1,stroke-width:1.5px,color:#ffffff
+    style D fill:#f59e0b,stroke:#b45309,stroke-width:1.5px,color:#ffffff
+    style E fill:#10b981,stroke:#047857,stroke-width:1.5px,color:#ffffff
+    style F fill:#ef4444,stroke:#991b1b,stroke-width:1.5px,color:#ffffff
+    style G fill:#7c3aed,stroke:#4c1d95,stroke-width:1.5px,color:#ffffff
+    style H fill:#1e293b,stroke:#334155,stroke-width:1.5px,color:#f8fafc
+    style I fill:#14b8a6,stroke:#0f766e,stroke-width:1.5px,color:#ffffff
+    style J fill:#9333ea,stroke:#6b21a8,stroke-width:1.5px,color:#ffffff
+    style K fill:#facc15,stroke:#a16207,stroke-width:1.5px,color:#000000
+    style L fill:#22c55e,stroke:#15803d,stroke-width:1.5px,color:#ffffff
+    style M fill:#f43f5e,stroke:#be123c,stroke-width:1.5px,color:#ffffff
+
 ```
 
 > **Explicação do diagrama:** Este fluxograma mostra o processo completo de autenticação. Quando um usuário tenta fazer login, suas credenciais são verificadas. Se forem válidas, uma sessão é criada e armazenada no localStorage do navegador. Quando o usuário tenta acessar uma rota protegida, o componente PrivateRoute verifica se existe uma sessão válida antes de permitir o acesso.
