@@ -29,7 +29,7 @@ graph TB
     C --> F[Serviços de API]
     F --> G[Supabase Database]
     F --> H[LocalStorage Fallback]
-    
+
     subgraph "Frontend Layer"
         C
         D
@@ -40,6 +40,17 @@ graph TB
         G
         H
     end
+
+    %% Estilos personalizados com cores modernas
+    style A fill:#3b82f6,stroke:#1e3a8a,stroke-width:1.5px,color:#fff
+    style B fill:#2563eb,stroke:#1e40af,stroke-width:1.5px,color:#fff
+    style C fill:#9333ea,stroke:#6b21a8,stroke-width:1.5px,color:#fff
+    style D fill:#8b5cf6,stroke:#7e22ce,stroke-width:1.5px,color:#fff
+    style E fill:#a855f7,stroke:#6b21a8,stroke-width:1.5px,color:#fff
+    style F fill:#10b981,stroke:#065f46,stroke-width:1.5px,color:#fff
+    style G fill:#22c55e,stroke:#15803d,stroke-width:1.5px,color:#fff
+    style H fill:#facc15,stroke:#ca8a04,stroke-width:1.5px,color:#000
+
 ```
 
 > **Explicação do diagrama:** Este diagrama mostra como o sistema funciona. Os usuários interagem com a interface web, que é construída com React.js. O sistema gerencia a navegação entre páginas (rotas), mantém o estado da aplicação e se comunica com o banco de dados Supabase. Se a conexão com o banco falhar, o sistema usa o armazenamento local do navegador como backup.
@@ -99,6 +110,16 @@ graph LR
     D --> E[Notificação]
     E --> F[Execução]
     F --> G[Finalização]
+
+    %% Estilo bonito, moderno e sem exageros
+    style A fill:#3b82f6,stroke:#1e3a8a,stroke-width:1.5px,color:#fff
+    style B fill:#6366f1,stroke:#3730a3,stroke-width:1.5px,color:#fff
+    style C fill:#8b5cf6,stroke:#6b21a8,stroke-width:1.5px,color:#fff
+    style D fill:#10b981,stroke:#065f46,stroke-width:1.5px,color:#fff
+    style E fill:#f59e0b,stroke:#b45309,stroke-width:1.5px,color:#fff
+    style F fill:#22c55e,stroke:#15803d,stroke-width:1.5px,color:#fff
+    style G fill:#0f172a,stroke:#334155,stroke-width:1.5px,color:#f8fafc
+
 ```
 
 > **Explicação do diagrama:** Este fluxo mostra como funciona o processo de agendamento, desde a solicitação inicial até a finalização do serviço. Cada etapa é gerenciada pelo sistema para garantir que não haja conflitos de horário e que todas as partes sejam notificadas adequadamente.
