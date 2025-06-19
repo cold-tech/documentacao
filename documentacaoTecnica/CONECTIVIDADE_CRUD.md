@@ -392,10 +392,18 @@ graph TD
     D --> H[Atualizar JSON Local]
     G --> H
     H --> I[Sincronizar quando Online]
-    
-    style C fill:#4ade80
-    style D fill:#fbbf24
-    style I fill:#8b5cf6
+
+    %% Estilos mais sóbrios e profissionais
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:1.5px,color:#f8fafc
+    style B fill:#334155,stroke:#38bdf8,stroke-width:1.5px,color:#e2e8f0
+    style C fill:#0ea5e9,stroke:#fff,stroke-width:1px,color:#fff
+    style D fill:#f43f5e,stroke:#fff,stroke-width:1px,color:#fff
+    style E fill:#475569,stroke:#22d3ee,stroke-width:1px,color:#e2e8f0
+    style F fill:#22c55e,stroke:#fff,color:#fff
+    style G fill:#f59e0b,stroke:#fff,color:#fff
+    style H fill:#7c3aed,stroke:#fff,color:#fff
+    style I fill:#6d28d9,stroke:#fff,color:#fff
+
 ```
 
 > **Explicação do diagrama:** Este diagrama ilustra a estratégia de fallback do sistema. Quando uma operação CRUD é iniciada, o sistema verifica se há conexão com o Supabase. Se estiver online, executa a operação no banco de dados remoto. Se estiver offline ou a operação falhar, utiliza o armazenamento local. Quando a conexão for restaurada, os dados locais serão sincronizados com o banco remoto.
