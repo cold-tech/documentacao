@@ -165,16 +165,17 @@ graph LR
     B --> C[Home]
     B --> D[Agendamentos]
     B --> E[Clientes]
-    B --> F[Servicos]
+    B --> F[Serviços]
     B --> G[Config]
     
-    style A fill:#d9ebf9
-    style B fill:#d9f9eb
-    style C fill:#f9d9eb
-    style D fill:#f9ebd9
-    style E fill:#ebf9d9
-    style F fill:#ebd9f9
-    style G fill:#f9ebad
+    style A fill:#1e3a8a,stroke:#fff,stroke-width:1px,color:#fff
+    style B fill:#2563eb,stroke:#fff,stroke-width:1px,color:#fff
+    style C fill:#10b981,stroke:#fff,stroke-width:1px,color:#fff
+    style D fill:#f59e0b,stroke:#fff,stroke-width:1px,color:#fff
+    style E fill:#84cc16,stroke:#fff,stroke-width:1px,color:#fff
+    style F fill:#ec4899,stroke:#fff,stroke-width:1px,color:#fff
+    style G fill:#8b5cf6,stroke:#fff,stroke-width:1px,color:#fff
+
 ```
 
 > **Explicação do diagrama:** Este diagrama mostra como as rotas administrativas estão organizadas hierarquicamente. O layout do Dashboard é compartilhado entre todas as sub-rotas, permitindo manter elementos comuns como o menu lateral e o cabeçalho.
