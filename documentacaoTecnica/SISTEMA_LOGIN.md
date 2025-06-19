@@ -308,21 +308,22 @@ export function AuthProvider({ children }) {
 ## 🔍 Fluxo Completo de Autenticação
 
 ```mermaid
+%% Use este bloco com tema claro ou escuro ativado na renderização
 sequenceDiagram
-    participant U as Usuário
-    participant L as Página Login
-    participant A as AuthContext
-    participant S as AuthService
-    participant LS as LocalStorage
-    participant R as Router
-    participant P as PrivateRoute
-    participant D as Dashboard
+    participant U as <font color="#3b82f6">Usuário</font>
+    participant L as <font color="#2563eb">Página Login</font>
+    participant A as <font color="#9333ea">AuthContext</font>
+    participant S as <font color="#0ea5e9">AuthService</font>
+    participant LS as <font color="#7c3aed">LocalStorage</font>
+    participant R as <font color="#22c55e">Router</font>
+    participant P as <font color="#f59e0b">PrivateRoute</font>
+    participant D as <font color="#10b981">Dashboard</font>
     
     U->>L: Insere credenciais
     L->>A: login(credentials)
     A->>S: login(email, password)
     S->>S: Verifica credenciais
-    
+
     alt Credenciais válidas
         S->>LS: Salva sessão
         S-->>A: Retorna dados do usuário
@@ -334,11 +335,14 @@ sequenceDiagram
         LS-->>A: Retorna dados da sessão
         A-->>P: Usuário autenticado
         P->>D: Renderiza Dashboard
+        note right of D: ✅ Acesso permitido
     else Credenciais inválidas
         S-->>A: Lança erro
         A-->>L: Login falhou
         L->>U: Exibe mensagem de erro
+        note right of L: ❌ Erro: dados inválidos
     end
+
 ```
 
 > **Explicação do diagrama:** Este diagrama de sequência mostra a interação entre todos os componentes envolvidos no processo de autenticação, desde o momento em que o usuário insere suas credenciais até a renderização do Dashboard após autenticação bem-sucedida.
