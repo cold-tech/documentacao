@@ -30,10 +30,27 @@ graph TB
     N --> P[Read]
     N --> Q[Update]
     N --> R[Delete]
-    
-    style D fill:#4ade80
-    style E fill:#fbbf24
-    style B fill:#3b82f6
+
+    %% Estilo com tons sóbrios e modernos
+    style A fill:#0f172a,stroke:#38bdf8,stroke-width:1.5px,color:#f1f5f9
+    style B fill:#1e293b,stroke:#3b82f6,stroke-width:1.5px,color:#f8fafc
+    style C fill:#334155,stroke:#38bdf8,stroke-width:1.5px,color:#e2e8f0
+    style D fill:#0ea5e9,stroke:#fff,stroke-width:1px,color:#fff
+    style E fill:#f43f5e,stroke:#fff,stroke-width:1px,color:#fff
+    style F fill:#4b5563,color:#fff
+    style G fill:#64748b,color:#fff
+    style H fill:#64748b,color:#fff
+    style I fill:#64748b,color:#fff
+    style J fill:#64748b,color:#fff
+    style K fill:#7c3aed,color:#fff
+    style L fill:#6d28d9,color:#fff
+    style M fill:#5b21b6,color:#fff
+    style N fill:#1d4ed8,color:#fff
+    style O fill:#22c55e,color:#fff
+    style P fill:#eab308,color:#fff
+    style Q fill:#f97316,color:#fff
+    style R fill:#ef4444,color:#fff
+
 ```
 
 > **Explicação do diagrama:** Este diagrama mostra como os dados fluem no sistema. O DatabaseService é o componente central que gerencia todas as operações de dados. Quando há conexão com a internet, os dados são armazenados no Supabase (banco de dados na nuvem). Quando não há conexão, o sistema usa o armazenamento local do navegador como backup. As operações CRUD (Criar, Ler, Atualizar, Deletar) funcionam da mesma forma independentemente de onde os dados estão armazenados.
