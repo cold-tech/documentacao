@@ -1,7 +1,7 @@
 # ColdTech - Sistema de Gerenciamento para Empresas de Ar-Condicionado
 
 <div align="center">
-  <img src="src/assets/logo.svg" alt="ColdTech Logo" width="200" />
+  <img src="https://raw.githubusercontent.com/GabrielCordeiroBarrosoTeles/coldtech/3585724ce98214f0ecc34d1f7928c601dead096f/src/assets/logo.svg" alt="ColdTech Logo" width="200" />
   <h3>Transforme a gestão do seu negócio de climatização</h3>
 </div>
 
